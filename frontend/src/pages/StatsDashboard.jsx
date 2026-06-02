@@ -26,7 +26,7 @@ export default function StatsDashboard() {
 
   const fetchStats = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/stats')
+      const response = await axios.get('http://localhost:5001/api/stats')
       setStats(response.data)
     } catch (error) {
       console.error('Failed to fetch stats:', error)

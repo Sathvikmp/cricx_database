@@ -30,7 +30,7 @@ export default function DataIngestion() {
     e.preventDefault()
     setLoading(true)
     try {
-      const response = await axios.post('http://localhost:5000/api/stats', formData)
+      const response = await axios.post('http://localhost:5001/api/stats', formData)
       setMessage({ type: 'success', text: 'Data added successfully!' })
       setFormData({
         playerName: '',
@@ -60,7 +60,7 @@ export default function DataIngestion() {
     formDataObj.append('file', csvFile)
 
     try {
-      const response = await axios.post('http://localhost:5000/api/stats/upload', formDataObj, {
+      const response = await axios.post('http://localhost:5001/api/stats/upload', formDataObj, {
         headers: { 'Content-Type': 'multipart/form-data' }
       })
       setMessage({ type: 'success', text: `Successfully uploaded ${response.data.count} records!` })
